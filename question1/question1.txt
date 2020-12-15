@@ -1,5 +1,5 @@
-Surname:
-First Name:
-CID:
-College Username:
-Github Username:
+Surname: Zhou
+First Name: Yankai
+CID: 01708712
+College Username: yz5319
+Github Username: 01708712

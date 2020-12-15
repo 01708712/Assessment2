@@ -33,10 +33,10 @@ def decode_word(input_word):
     # check if word is valid emoticon code
     if input_word not in emoji_code.keys():
         # return empty string
-        return 
+        return ''
      
     # return the decoded word
-    return emoji_code
+    return emoji_code.get(input_word,)
 
 def word_to_emoticon(input_string):
     '''Takes in a string containing a sequence of words and 
@@ -44,18 +44,18 @@ def word_to_emoticon(input_string):
     by an emoticon are replaced with that emoticon.'''
 
     # create list of words from the string splitting at ' '
-    input_list = input_string.split(',')
+    input_list = input_string.split(' ')
 
     # create string to be returned
     decoded_string = input_string
 
     # go through list of words
-    for word in input_list
+    for word in input_list:
         # decode each word into its emoticon
         decoded_word = decode_word(word)
         # replace the word with the returned emoticon  
         if decoded_word != '':
-            decoded_string = decoded_string.replace(word, decoded_word)
+            decoded_string = decoded_string.replace(word,str(decoded_word))
 
     # return new string of emoticons
     return decoded_string

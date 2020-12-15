@@ -67,3 +67,25 @@ difficult to understand
 
 # Creat a method called calculate_cost(). It should:
 #   - return the total value of the trolley (cost x quantity)
+class Trolley():
+    def __init__(self):
+        self.contents = {}
+
+    def add_product(self,product_name, product_cost,quantity=1):
+        if product_name not in self.contents.keys():
+            self.contents[product_name] = {'cost':product_cost, 'quantity':quantity}
+        else:
+            self.contents[product_name]['quantity'] += quantity
+
+    def remove_product(self,product_name):
+        if product_name in self.contents.keys():
+            if self.contents[product_name]['quantity'] > 0:
+                self.contents[product_name]['quantity'] -= 1
+            if self.contents[product_name]['quantity'] == 0:
+                self.contents.pop(product_name)
+
+    def calculate_cost(self):
+        cost = 0
+        for k in self.contents.keys():
+            cost += self.contents[k]['cost']*self.contents[k]['quantity']
+        return cost

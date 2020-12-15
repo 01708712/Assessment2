@@ -29,8 +29,17 @@ Diagram Completeness (5)
 |-------------------------------|
 | Bicycle                       |
 |-------------------------------|
-|                               |
+|   (c)num_wheels               |
+|    (i)num_chainrings          |
+|    (i)front_chainring_values  |
+|    (i)current_chainring       |     
+|    (i)num_rear_cogs           |
+|    (i)rear_cogs_values        |
+|    (i)current_rear_cog        | 
 |-------------------------------|
-|                               |
+|      __init__()               |
+|       get_gear_inches()       |
+|       set_rear_cog()          |
+|       set_front_chainring()   |
+|       is_single_speed()       |                 
 |-------------------------------|
-

@@ -33,12 +33,30 @@ difficult to understand
 '''
 # Write a Python script that reads in the csv file `data.csv` and generates 
 # a boxplot as shown in the image in ./img.
-# 
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import sys
+
 # Read the CSV file `data.csv` into a numpy array (hint: the delimiter in the 
 # file is `','`). In order to achieve full marks, ensure your code will run on 
 # another computer (even another operating system) without needing to be edited.
-# 
+csv_data = np.genfromtxt(os.path.join(sys.path[0]),'csv/data.csv', delimiter=',')
+
+
 # Create a boxplot using matplotlib using the data in the 5th column of the csv 
 # file in ./csv. Set the notch to be `True` and change the symbols of the outliers 
 # to be blue diamonds, `'bD'`. Set the plot title and labels to match the image 
 # (Question 6 Plot, Input Data, Values).
+
+
+plt.boxplot(csv_data[:, 4],notch=True, sym='6D')
+
+
+# add a title
+plt.title('Question 6 Plot')
+# x and y axis labels
+plt.ylabel('Values')
+plt.xlabel('Input Data')
+# show the plot
+plt.show()

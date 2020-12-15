@@ -49,7 +49,7 @@ class Bicycle:
         '''       
 
         # gear inches = gear ratio x wheel diameter
-        return self.front_chainring_values[self.current_chainring-1]/self.rear_cogs_values[self.current_rear_cog-1]
+        return self.front_chainring_values[self.current_chainring-1]*self.rear_cogs_values[self.current_rear_cog-1]
 
     def set_rear_cog(self, rear_cog_num):
         '''
@@ -59,7 +59,7 @@ class Bicycle:
         
         # check that the cog number is a positive number and does not exceed the number of cogs
         if rear_cog_num < 1 or rear_cog_num > self.num_rear_cogs:
-            raise TypeError
+            raise ValueError
 
         # otherwise set current cog number
         self.current_rear_cog = rear_cog_num
@@ -76,7 +76,7 @@ class Bicycle:
             raise ValueError
 
         # otherwise set current cog number
-        current_chainring = chainring_num
+        self.current_chainring = chainring_num
 
     def is_single_speed(self):
         '''
@@ -90,5 +90,5 @@ class Bicycle:
             return True
 
         # otherwise is not a single speed bike
-        return True
-    
+        else:
+            return False
