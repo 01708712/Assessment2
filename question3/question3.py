@@ -30,7 +30,7 @@ class Bicycle:
         # count number of front chainrings
         self.num_chainrings = len(front_chainrings)
         # sort the sprockets into increasing values and set to attribute
-        self.front_chainring_values = front_chainrings
+        self.front_chainring_values = sorted(front_chainrings)
         # set current front gear to smallest chainring
         self.current_chainring = 1
 
@@ -49,7 +49,7 @@ class Bicycle:
         '''       
 
         # gear inches = gear ratio x wheel diameter
-        return self.front_chainring_values[self.current_chainring-1]*self.rear_cogs_values[self.current_rear_cog-1]
+        return self.front_chainring_values[self.current_chainring-1]*self.rear_cogs_values[self.current_rear_cog]
 
     def set_rear_cog(self, rear_cog_num):
         '''
